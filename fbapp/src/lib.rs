@@ -17,3 +17,5 @@ extern crate uuid;
 
 pub mod api;
 pub mod framework;
+
+embed_migrations!("migrations");
