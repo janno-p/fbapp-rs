@@ -1,3 +1,9 @@
 /target/
 **/*.rs.bk
 .env
+
+fbapp-elm/elm-stuff/
+fbapp-elm/node_modules/
+
+fbapp/static/
+!fbapp/static/.gitkeep

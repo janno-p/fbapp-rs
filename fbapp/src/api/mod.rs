@@ -7,7 +7,8 @@ pub fn launch() {
         .mount(
             "/",
             routes![
-                home::index
+                home::index,
+                home::files
             ]
         )
         .mount(
