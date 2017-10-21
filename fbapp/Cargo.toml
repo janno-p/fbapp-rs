@@ -1,0 +1,6 @@
+[package]
+name = "fbapp"
+version = "0.1.0"
+authors = ["Janno Põldma <janno.poldma@gmail.com>"]
+
+[dependencies]
