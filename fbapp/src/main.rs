@@ -1,3 +1,5 @@
+extern crate fbapp;
+
 fn main() {
-    println!("Hello, world!");
+    fbapp::api::launch();
 }
