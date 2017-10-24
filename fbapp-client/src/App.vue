@@ -1,46 +1,51 @@
 <script lang="tsx">
 
+import moment from "moment";
 import Vue, { CreateElement } from "vue";
 import { Component } from "vue-property-decorator";
 
 @Component({})
 export default class App extends Vue {
+    year = moment().format("YYYY");
+
+    createRouterLink(h: CreateElement, path: string, display: string) {
+        return <li class={ this.$route.path === path ? "active" : undefined }>
+            <router-link to={ path }>{ display }</router-link>
+        </li>;
+    }
+
     render(h: CreateElement) {
         return <div class="app">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else</a>
-                            </div>
-                        </li>
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <router-link class="navbar-brand" to="/">Ennustusmäng</router-link>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        { this.createRouterLink(h, "/", "Home") }
+                        { this.createRouterLink(h, "/about", "About") }
+                        { this.createRouterLink(h, "/contact", "Contact") }
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><router-link to="/dashboard"><i class="fa fa-dashboard fa-lg"></i></router-link></li>
+                    </ul>
                 </div>
             </nav>
             <main role="main" class="container">
                 <router-view />
             </main>
+            <footer>
+                <hr />
+                <div class="container">
+                    <p class="text-center">&copy; { this.year } &ndash; FbApp</p>
+                </div>
+            </footer>
         </div>;
     }
 }

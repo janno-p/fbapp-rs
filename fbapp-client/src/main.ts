@@ -6,7 +6,6 @@ import App from "./App.vue";
 
 Vue.config.productionTip = false;
 
-/* tslint-disable no-unused-expression */
 // tslint:disable-next-line:no-unused-expression
 new Vue({
     el: "#app",
