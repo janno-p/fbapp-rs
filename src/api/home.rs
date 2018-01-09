@@ -5,7 +5,7 @@ use rocket::response::NamedFile;
 
 #[get("/")]
 fn index() -> Result<NamedFile> {
-    NamedFile::open("static/index.html")
+    NamedFile::open("assets/index.html")
 }
 
 #[get("/<file..>")]
