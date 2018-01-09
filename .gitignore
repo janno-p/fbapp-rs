@@ -5,6 +5,7 @@
 src-elm/elm-stuff/
 
 assets/
+!assets/index.html
 !assets/.gitkeep
 
 .DS_Store

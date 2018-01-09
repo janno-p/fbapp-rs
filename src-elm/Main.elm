@@ -1,14 +1,16 @@
 module Main exposing (main)
 
 import Html exposing (..)
-import Bootstrap.CDN as CDN
+import Html.Attributes exposing (..)
 import Bootstrap.Grid as Grid
 
+main : Html msg
 main =
     Grid.container []
-        [ CDN.stylesheet
-        , Grid.row []
+        [ Grid.row []
             [ Grid.col []
-                [ text "Some content for my view here ..." ]
+                [ i [ class "fas fa-cogs fa-2x" ] []
+                , text "Some content for my view here ..."
+                ]
             ]
         ]
