@@ -9,10 +9,10 @@ module.exports = function (ctx) {
         ],
         extras: [
             ctx.theme.mat ? 'roboto-font' : null,
-            'material-icons'
-            // 'ionicons',
-            // 'mdi',
-            // 'fontawesome'
+            'material-icons',
+            'ionicons',
+            'mdi',
+            'fontawesome'
         ],
         supportIE: true,
         vendor: {
@@ -41,8 +41,8 @@ module.exports = function (ctx) {
             // port: 8080,
             open: true // opens browser window automatically
         },
-        // framework: 'all' --- includes everything; for dev only!
-        framework: {
+        framework: 'all', // --- includes everything; for dev only!
+        /*framework: {
             components: [
                 'QLayout',
                 'QLayoutHeader',
@@ -66,7 +66,7 @@ module.exports = function (ctx) {
             plugins: [
                 'Notify'
             ]
-        },
+        },*/
         // animations: 'all' --- includes all animations
         animations: [
         ],
