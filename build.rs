@@ -1,7 +1,8 @@
-use std::process::Command;
-use std::path::Path;
+//use std::process::Command;
+//use std::path::Path;
 
 fn main() {
+    /*
     println!("cargo:rerun-if-changed=./src-elm/");
 
     let output = Command::new("elm-make")
@@ -20,4 +21,7 @@ fn main() {
     println!("{}", String::from_utf8_lossy(&output.stderr));
 
     std::process::exit(1);
+    */
+
+    std::process::exit(0);
 }
