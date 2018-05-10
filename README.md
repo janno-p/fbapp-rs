@@ -1,30 +1,36 @@
-# fbapp
+# FbApp
 
-> A Vue.js project
+Playground application for trying out new technologies, libraries, frameworks, patterns, tools etc.
 
-## Build Setup
 
-``` bash
-# install dependencies
-yarn install
+## Primary Objectives ##
 
-# serve with hot reload at localhost:8080
-yarn dev
+* Authentication using [Google Sign-In JavaScript Client](https://developers.google.com/identity/sign-in/web/reference).
+* Client application using [Vue.js](https://vuejs.org/) and [Quasar Framework](http://quasar-framework.org).
+* Server API built with [Rust Programming Language](https://www.rust-lang.org/en-US/).
+* Apply [CQRS](https://martinfowler.com/bliki/CQRS.html) and [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) principles.
 
-# build for production with minification
-yarn build
 
-# build for production and view the bundle analyzer report
-npm_config_report=true yarn build
+## Prerequisites ##
 
-# run unit tests
-yarn unit
+* [Rust Nightly](https://www.rust-lang.org/en-US/)
+* [Yarn](https://yarnpkg.com/en/)
 
-# run e2e tests
-yarn e2e
 
-# run all tests
-yarn test
+## Quick Start ##
+
+Build and run application:
+
+Linux:
+
+```shell
+$ cargo run -- --dev
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Windows:
+
+```DOS
+> cargo run -- --dev
+```
+
+The [site](http://localhost:8080) should automatically open in default browser.
