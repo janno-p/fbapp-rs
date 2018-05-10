@@ -1,8 +1,10 @@
-use std::process::Command;
+use std::process::{Command, Stdio};
 use std::path::Path;
 
 fn main() {
     let output = Command::new("quasar")
+        .stderr(Stdio::inherit())
+        .stdout(Stdio::inherit())
         .current_dir(Path::new("web"))
         .arg("dev")
         .output()
