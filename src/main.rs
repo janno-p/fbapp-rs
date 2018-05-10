@@ -1,17 +1,21 @@
 extern crate fbapp;
 
-use std::process::{Command, Stdio};
-use std::path::Path;
-
 fn main() {
-    let args: Vec<String> = std::env::args().collect();
-    if let Some(_) = args.iter().find(|&x| x == "--dev") {
-        start_quasar_dev();
+    #[cfg(debug_assertions)]
+    {
+        let args: Vec<String> = std::env::args().collect();
+        if let Some(_) = args.iter().find(|&x| x == "--dev") {
+            start_quasar_dev();
+        }
     }
     fbapp::api::launch();
 }
 
+#[cfg(debug_assertions)]
 fn start_quasar_dev() {
+    use std::process::{Command,Stdio};
+    use std::path::Path;
+
     let output = Command::new("yarn")
         .stderr(Stdio::inherit())
         .stdout(Stdio::inherit())
@@ -33,5 +37,5 @@ fn start_quasar_dev() {
         .arg("quasar")
         .arg("dev")
         .spawn()
-        .unwrap();
+        .unwrap() ;
 }
