@@ -1,16 +1,10 @@
-//use std::process::Command;
-//use std::path::Path;
+use std::process::Command;
+use std::path::Path;
 
 fn main() {
-    /*
-    println!("cargo:rerun-if-changed=./src-elm/");
-
-    let output = Command::new("elm-make")
-        .current_dir(Path::new("src-elm"))
-        .arg(Path::new("Main.elm"))
-        .arg("--output")
-        .arg(Path::new("../assets/main.js"))
-        .arg("--yes")
+    let output = Command::new("quasar")
+        .current_dir(Path::new("web"))
+        .arg("dev")
         .output()
         .unwrap();
 
@@ -21,7 +15,4 @@ fn main() {
     println!("{}", String::from_utf8_lossy(&output.stderr));
 
     std::process::exit(1);
-    */
-
-    std::process::exit(0);
 }
