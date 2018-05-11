@@ -37,7 +37,7 @@ module.exports = function (ctx) {
             distDir: "../assets"
         },
         devServer: {
-            // https: true,
+            https: true,
             // port: 8080,
             open: true // opens browser window automatically
         },
