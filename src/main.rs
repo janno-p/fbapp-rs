@@ -4,7 +4,7 @@ fn main() {
     #[cfg(debug_assertions)]
     {
         let args: Vec<String> = std::env::args().collect();
-        if let Some(_) = args.iter().find(|&x| x == "--dev") {
+        if args.iter().any(|x| *x == "--dev") {
             start_quasar_dev();
         }
     }
