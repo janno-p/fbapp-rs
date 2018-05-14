@@ -13,11 +13,13 @@ function getUserPayload (googleUser) {
     let userToken = ""
     if (googleUser) {
         const profile = googleUser.getBasicProfile()
-        email = profile.getEmail()
-        imageUrl = profile.getImageUrl()
-        name = profile.getName()
-        userId = profile.getId()
-        userToken = googleUser.getAuthResponse().id_token
+        if (profile) {
+            email = profile.getEmail()
+            imageUrl = profile.getImageUrl()
+            name = profile.getName()
+            userId = profile.getId()
+            userToken = googleUser.getAuthResponse().id_token
+        }
     }
     return { email, imageUrl, name, userId, userToken }
 }
@@ -47,7 +49,15 @@ const store = new Vuex.Store({
         googleSignIn (context) {
             try {
                 const auth = window.gapi.auth2.getAuthInstance()
-                auth.signIn().then((googleUser) => context.commit("setUser", getUserPayload(googleUser)))
+                auth.signIn().then((googleUser) => {
+                    context.commit("setUser", getUserPayload(googleUser))
+                    const email = context.state.email
+                    const idToken = context.state.userToken
+                    this._vm.$axios.post("/tokensignin", { email, id_token: idToken }).then(
+                        (x) => console.info(x),
+                        (e) => console.error(e)
+                    )
+                })
             } catch (e) {
                 console.error(e)
             }
@@ -57,7 +67,10 @@ const store = new Vuex.Store({
                 const auth = window.gapi.auth2.getAuthInstance()
                 auth.disconnect()
                 context.commit("setUser", getUserPayload(null))
-                // TODO: notify server
+                this._vm.$axios.post("/tokensignout", {}).then(
+                    (x) => console.info(x),
+                    (e) => console.error(e)
+                )
             } catch (e) {
                 console.error(e)
             }
