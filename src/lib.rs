@@ -16,5 +16,6 @@ extern crate rocket_contrib;
 #[macro_use]
 extern crate serde_derive;
 
-pub mod api;
-pub mod framework;
+mod api;
+
+pub use api::server;

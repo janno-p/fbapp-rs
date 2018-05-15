@@ -8,7 +8,7 @@ fn main() {
             start_quasar_dev();
         }
     }
-    fbapp::api::launch();
+    fbapp::server::start();
 }
 
 #[cfg(debug_assertions)]

@@ -1,7 +1,6 @@
+use rocket::response::NamedFile;
 use std::io::Result;
 use std::path::{Path, PathBuf};
-
-use rocket::response::NamedFile;
 
 #[get("/")]
 fn index() -> Result<NamedFile> {
