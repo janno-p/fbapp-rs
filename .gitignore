@@ -8,6 +8,8 @@ src-elm/elm-stuff/
 !/assets/index.html
 !/assets/.gitkeep
 
+/rls/
+
 .DS_Store
 
 # Editor directories and files
