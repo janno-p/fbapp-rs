@@ -31,18 +31,16 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from "vuex"
+import { mapState, mapActions } from "vuex"
 
 export default {
     name: "LayoutDefault",
     computed: {
         ...mapState([
             "isGoogleReady",
+            "isSignedIn",
             "imageUrl",
             "name"
-        ]),
-        ...mapGetters([
-            "isSignedIn"
         ]),
         sizedImageUrl () {
             return this.imageUrl + "?sz=32"

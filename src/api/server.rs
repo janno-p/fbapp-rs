@@ -15,6 +15,7 @@ pub fn start() {
         .mount(
             "/api/",
             routes![
+                auth::tokeninfo,
                 auth::tokensignin,
                 auth::tokensignout
             ])

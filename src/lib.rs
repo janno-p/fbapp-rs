@@ -4,6 +4,7 @@
 extern crate diesel;
 
 extern crate futures;
+extern crate reqwest;
 extern crate rocket;
 extern crate serde;
 extern crate serde_json;
