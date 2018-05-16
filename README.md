@@ -14,6 +14,7 @@ Playground application for trying out new technologies, libraries, frameworks, p
 ## Prerequisites ##
 
 * [Rust Nightly](https://www.rust-lang.org/en-US/)
+* [Node.js](https://nodejs.org/en/)
 * [Yarn](https://yarnpkg.com/en/)
 
 
