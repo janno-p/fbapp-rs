@@ -98,5 +98,8 @@ fn tokensignin(mut cookies: Cookies, message: Json<Message>) -> Result<Json, Bad
 #[post("/tokensignout", format = "application/json")]
 fn tokensignout(mut cookies: Cookies) -> Json {
     cookies.remove_private(Cookie::named("user_id"));
+    cookies.remove_private(Cookie::named("user_name"));
+    cookies.remove_private(Cookie::named("user_email"));
+    cookies.remove_private(Cookie::named("user_picture"));
     Json(json!({ "status": "ok" }))
 }
