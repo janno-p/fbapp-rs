@@ -1,12 +1,9 @@
 ﻿use rocket;
 
 use super::auth;
-use super::cors;
 use super::home;
 
 pub fn start() {
-    let options = cors::options();
-
     rocket::ignite()
         .mount(
             "/",
@@ -21,6 +18,5 @@ pub fn start() {
                 auth::tokensignin,
                 auth::tokensignout
             ])
-        .attach(options)
         .launch();
 }

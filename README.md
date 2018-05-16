@@ -34,10 +34,3 @@ Windows:
 ```
 
 The [site](http://localhost:8080) should automatically open in default browser.
-
-> **NOTE!**
->
-> On the first run you should manually accept self-signed certificates in your browser, otherwise
-> the communication between webpack frontend and rocket backend won't work.
->
-> For that open backend site (http://localhost:8000) in your browser and accept the certificate.

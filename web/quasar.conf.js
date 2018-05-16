@@ -36,10 +36,17 @@ module.exports = function (ctx) {
             },
             distDir: "../assets",
             env: {
-                API: JSON.stringify("https://localhost:8000/api")
+                API: JSON.stringify("/api")
             }
         },
         devServer: {
+            proxy: {
+                "/api": {
+                    target: "https://localhost:8000",
+                    changeOrigin: true,
+                    secure: false
+                }
+            },
             https: true,
             // port: 8080,
             open: true // opens browser window automatically

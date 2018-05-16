@@ -37,6 +37,16 @@ fn start_quasar_dev() {
         command
     }
 
+    let b = Some(15);
+    if let Some(_) = b {
+        println!("jei!");
+    }
+
+    let a = true;
+    if a && true {
+        println!("tere!");
+    }
+
     let output = create_command()
         .arg("install")
         .output();
