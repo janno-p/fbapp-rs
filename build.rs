@@ -1,3 +1,6 @@
 ﻿fn main() {
-    println!(r"cargo:rustc-link-search=C:\Users\Janno\Downloads\postgresql-10.3-3-windows-x64-binaries\pgsql\lib");
+    #[cfg(all(windows, target_pointer_width = "64"))]
+    {
+        println!(r"cargo:rustc-link-search=native\win-x64");
+    }
 }
