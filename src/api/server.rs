@@ -1,9 +1,12 @@
-﻿use rocket;
+﻿use dotenv::dotenv;
+use rocket;
 
 use super::auth;
 use super::home;
 
 pub fn start() {
+    dotenv().ok();
+
     rocket::ignite()
         .mount(
             "/",

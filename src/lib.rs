@@ -2,7 +2,7 @@
 #![plugin(rocket_codegen)]
 
 extern crate diesel;
-
+extern crate dotenv;
 extern crate futures;
 extern crate reqwest;
 extern crate rocket;
