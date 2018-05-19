@@ -11,7 +11,8 @@ const store = new Vuex.Store({
         isSignedIn: false,
         name: "",
         imageUrl: "",
-        email: ""
+        email: "",
+        claims: []
     },
     modules: {
         example
@@ -65,6 +66,12 @@ const store = new Vuex.Store({
             state.email = payload ? payload.email : ""
             state.imageUrl = payload ? payload.picture : ""
             state.name = payload ? payload.name : ""
+            state.claims = payload ? payload.claims : []
+        }
+    },
+    getters: {
+        hasDashboard (state) {
+            return state.claims.includes("use_dashboard")
         }
     }
 })

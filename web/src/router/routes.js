@@ -7,6 +7,13 @@ export default [
         ]
     },
 
+    {
+        path: "/dashboard",
+        component: () => import("layouts/dashboard"),
+        children: [
+        ]
+    },
+
     // Always leave this as last one
     {
         path: "*",
