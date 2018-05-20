@@ -11,6 +11,8 @@ export default [
         path: "/dashboard",
         component: () => import("layouts/dashboard"),
         children: [
+            { path: "", component: () => import("pages/dashboard/index") },
+            { path: "competitions", component: () => import("pages/dashboard/competitions") }
         ]
     },
 
